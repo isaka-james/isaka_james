@@ -1,24 +1,7 @@
 #![no_std]
-#![no_main]
+#![no_main] // No crt0 (start)
 
 use core::panic::PanicInfo;
-
-
-#[repr(C, packed)]
-#[derive(Debug, Clone, Copy)]
-struct MultibootHeader {
-    magic: u32,
-    flags: u32,
-    checksum: u32,
-}
-
-#[no_mangle]
-#[link_section = ".multiboot_header"]
-static MULTIBOOT_HEADER: MultibootHeader = MultibootHeader {
-    magic: 0x1BADB002,
-    flags: 0,
-    checksum: (0x1BADB002u32 + 0u32).wrapping_neg() as u32,
-};
 
 const VGA_BUFFER: usize = 0xb8000;
 
