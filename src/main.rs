@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use core::ptr;
+// use core::ptr;
 use core::arch::asm;
 #[repr(u8)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -94,7 +94,6 @@ impl VGA {
     }
 }
 
-// Helper function to write to a port
 unsafe fn outb(port: u16, val: u8) {
     asm!("out dx, al", in("dx") port, in("al") val);
 }
@@ -126,7 +125,7 @@ pub extern "C" fn _start() -> ! {
     loop {}
 }
 #[panic_handler]
-fn panic(info: &core::panic::PanicInfo) -> ! {
+fn panic(_info: &core::panic::PanicInfo) -> ! {
     loop {} // Infinite loop on panic, as there's no way to recover
 }
 
