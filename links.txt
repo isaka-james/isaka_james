@@ -1,5 +1,11 @@
+REFERENCE LINKS USED THROUGH OUT
+
 STANDARDS
 https://en.wikipedia.org/wiki/Intel_Binary_Compatibility_Standard        => ABI standards
 
 RUST SPECIFICS
 https://doc.rust-lang.org/cargo/reference/config.html => cargo documentations
+
+BOOTLOADER
+https://os.phil-opp.com/	-> This and,
+https://www.youtube.com/@UncleScientist	-> this helped me on configuring bootloader
